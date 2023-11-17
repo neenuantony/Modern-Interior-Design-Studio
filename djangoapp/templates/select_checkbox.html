@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <style>
+    body{
+       background-image: url("{% static 'background.jpg' %}");
+       background-repeat: no-repeat;
+       background-size: 100% 850px;
+       background-attachment: fixed;
+    }
+   #form{
+       margin-top: 10px;
+       margin-left: 100px;
+       margin-right: 100px;
+       color:white;
+       padding: 50px;
+       }
+   </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <form method="post" id="form" enctype="multipart/form-data"> {% csrf_token%}
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label" ><b>FULL NAME</b></label>
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control" name="name">
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label" ><b>STATE</b></label>
+                </div>
+                <div class="col-6">
+                    <select class="form-select" name="state" >
+                      <option selected>----Select----</option>
+                      <option value="1">KERALA</option>
+                      <option value="2">TAMILNADU</option>
+                      <option value="3">KARNADAKA</option>
+                      <option value="4">KASHMEER</option>
+                      <option value="5">GUJRAT</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label" ><b>LANGUAGES</b></label>
+                </div>
+                <div class="col-6">
+                    <div class="form-check">
+                         <input class="form-check-input" type="checkbox" value="" name="english">
+                         <label class="form-check-label" > ENGLISH  </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" name="malayalam">
+                        <label class="form-check-label" > MALAYALAM  </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" name="hindi">
+                        <label class="form-check-label" > HINDI  </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center><button type="submit" class="btn btn-info"><b>SUBMIT</b></button></center>
+    </form>
+</div>
+</body>
+</html>

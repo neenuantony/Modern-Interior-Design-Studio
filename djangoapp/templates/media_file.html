@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+  {% for i in data %}
+  <tr>
+    <td>{{i.audio_name}}</td>
+    <td><audio controls><source src="{{i.audio}}"></audio></td>
+    <td>{{i.video_name}}</td>
+    <td><video controls height="200px" width="300px"><source src="{{i.video}}"></video></td>
+      <td>{{i.pdf_name}}</td>
+    <td><a href="{{i.pdf}}">View PDF</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
